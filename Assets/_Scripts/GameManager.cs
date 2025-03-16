@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class GameManager : SingletonMonoBehavior<GameManager>
 {
@@ -8,6 +9,15 @@ public class GameManager : SingletonMonoBehavior<GameManager>
 
     private int currentBrickCount;
     private int totalBrickCount;
+    private int currentLives;
+
+    public GameObject gameOverPanel;
+
+    private void Start()
+    {
+        gameOverPanel.SetActive(false);
+        currentLives = maxLives;
+    }
 
     private void OnEnable()
     {
@@ -39,9 +49,29 @@ public class GameManager : SingletonMonoBehavior<GameManager>
 
     public void KillBall()
     {
-        maxLives--;
+        currentLives--;
+        Debug.Log("Life lost! Remaining lives: " + currentLives);
+        if (currentLives <= 0)
+        {
+            // trigger gameover logic
+            Debug.Log("Game Over!");
+            gameOverPanel.SetActive(true);
+            Time.timeScale = 0;
+            StartCoroutine(EndGame());
+        
+        }
+        else
+        {
+            ball.ResetBall();
+        }
         // update lives on HUD here
-        // game over UI if maxLives < 0, then exit to main menu after delay
-        ball.ResetBall();
+       
+    }
+
+    IEnumerator EndGame()
+    {
+        yield return new WaitForSecondsRealtime(1.5f); // Wait for 1.5 seconds, using real time
+        Time.timeScale = 1; // Reset the time scale to normal before transitioning
+        SceneHandler.Instance.LoadMenuScene(); // Load the main menu scene
     }
 }
