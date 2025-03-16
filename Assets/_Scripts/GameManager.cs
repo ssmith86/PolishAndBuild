@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using TMPro;
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : SingletonMonoBehavior<GameManager>
@@ -6,6 +7,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     [SerializeField] private int maxLives = 3;
     [SerializeField] private Ball ball;
     [SerializeField] private Transform bricksContainer;
+    [SerializeField] private TextMeshProUGUI lifeText;
 
     private int currentBrickCount;
     private int totalBrickCount;
@@ -17,6 +19,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     {
         gameOverPanel.SetActive(false);
         currentLives = maxLives;
+        lifeText.text = $"Lives: {currentLives}";
     }
 
     private void OnEnable()
@@ -50,6 +53,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     public void KillBall()
     {
         currentLives--;
+        lifeText.text = $"Lives: {currentLives}";
         Debug.Log("Life lost! Remaining lives: " + currentLives);
         if (currentLives <= 0)
         {
@@ -64,7 +68,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         {
             ball.ResetBall();
         }
-        // update lives on HUD here
+       
        
     }
 
