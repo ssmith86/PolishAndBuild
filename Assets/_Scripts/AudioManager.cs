@@ -6,15 +6,14 @@ public class Audiomanager : MonoBehaviour
     public static Audiomanager instance;
 
     [Header ("Audio Sources")]
-    public AudioSource SFX; //bouncince and destroy
+    public AudioSource SFX; 
     public AudioSource Ambience; // backgorund
-    public AudioSource LSource; //ball launch 
+    public AudioSource BSource; //ball source
 
 
     [Header ("Audio Clips")]
     public AudioClip Bounce;
     public AudioClip Break;
-    public AudioClip Launch;
     public AudioClip Background;
 
     private void Awake()
@@ -45,13 +44,32 @@ public class Audiomanager : MonoBehaviour
         }
     }
 
-    public void playSound(AudioClip clip)
+    public void PlayBounce()
     {
-        if(clip != null)
+        if (BSource != null && Bounce != null)
+        {   
+            BSource.clip = Bounce;
+            BSource.Play();
+        }
+        else
         {
-            SFX.PlayOneShot(clip);
+            Debug.LogWarning("Bounce sound or AudioSource is missing!");
+        }
+    }
+
+    public void PlayBreak()
+    {
+        if (SFX != null && Break != null)
+        {
+            SFX.clip = Break;
+            SFX.Play();
+        }
+        else
+        {
+            Debug.LogWarning("Bounce sound or AudioSource is missing!");
         }
     }
 
 
-}
+
+    }

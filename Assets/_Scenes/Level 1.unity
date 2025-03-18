@@ -290,6 +290,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1258617761497222491, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
+      propertyPath: Audiomanager
+      value: 
+      objectReference: {fileID: 737475616}
     - target: {fileID: 5252904249612493878, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
       propertyPath: m_Name
       value: Brick
@@ -498,6 +502,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1258617761497222491, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
+      propertyPath: Audiomanager
+      value: 
+      objectReference: {fileID: 737475616}
     - target: {fileID: 5252904249612493878, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
       propertyPath: m_Name
       value: Brick
@@ -626,6 +634,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1258617761497222491, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
+      propertyPath: Audiomanager
+      value: 
+      objectReference: {fileID: 737475616}
     - target: {fileID: 5252904249612493878, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
       propertyPath: m_Name
       value: Brick
@@ -1020,7 +1032,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1117,7 +1129,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.903
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1215,10 +1227,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SFX: {fileID: 737475615}
   Ambience: {fileID: 737475614}
-  LSource: {fileID: 737475613}
+  BSource: {fileID: 737475613}
   Bounce: {fileID: 8300000, guid: 1d3a3078fcc7b374cb990d915a186c47, type: 3}
   Break: {fileID: 8300000, guid: 3c52024af6f65f14c9968afbe3d93278, type: 3}
-  Launch: {fileID: 0}
   Background: {fileID: 8300000, guid: 8b2acb4ee86171c418ff841fa1ba401f, type: 3}
 --- !u!4 &737475617
 Transform:
@@ -1437,6 +1448,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1258617761497222491, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
+      propertyPath: Audiomanager
+      value: 
+      objectReference: {fileID: 737475616}
     - target: {fileID: 5252904249612493878, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
       propertyPath: m_Name
       value: Brick
@@ -1673,6 +1688,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1258617761497222491, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
+      propertyPath: Audiomanager
+      value: 
+      objectReference: {fileID: 737475616}
     - target: {fileID: 5252904249612493878, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
       propertyPath: m_Name
       value: Brick
@@ -1847,6 +1866,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1258617761497222491, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
+      propertyPath: Audiomanager
+      value: 
+      objectReference: {fileID: 737475616}
     - target: {fileID: 5252904249612493878, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
       propertyPath: m_Name
       value: Brick
@@ -2036,6 +2059,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1258617761497222491, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
+      propertyPath: Audiomanager
+      value: 
+      objectReference: {fileID: 737475616}
     - target: {fileID: 5252904249612493878, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
       propertyPath: m_Name
       value: Brick
@@ -2102,6 +2129,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1258617761497222491, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
+      propertyPath: Audiomanager
+      value: 
+      objectReference: {fileID: 737475616}
     - target: {fileID: 5252904249612493878, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
       propertyPath: m_Name
       value: Brick
@@ -2509,6 +2540,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1258617761497222491, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
+      propertyPath: Audiomanager
+      value: 
+      objectReference: {fileID: 737475616}
     - target: {fileID: 5252904249612493878, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
       propertyPath: m_Name
       value: Brick
@@ -2653,6 +2688,10 @@ PrefabInstance:
       propertyPath: ballAnchor
       value: 
       objectReference: {fileID: 269931761}
+    - target: {fileID: 6846597512200348566, guid: 70365e4fb3127d44db431487cd761c1c, type: 3}
+      propertyPath: Audiomanager
+      value: 
+      objectReference: {fileID: 737475616}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
