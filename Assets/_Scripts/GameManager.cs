@@ -1,6 +1,8 @@
 ﻿using TMPro;
 using System.Collections;
 using UnityEngine;
+using UnityEditor;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : SingletonMonoBehavior<GameManager>
 {
@@ -8,12 +10,20 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     [SerializeField] private Ball ball;
     [SerializeField] private Transform bricksContainer;
     [SerializeField] private TextMeshProUGUI lifeText;
+    [SerializeField] private int point = 0;
+    [SerializeField] private PointCounter pointsCounter;
 
     private int currentBrickCount;
     private int totalBrickCount;
     private int currentLives;
 
     public GameObject gameOverPanel;
+
+    public void IncreasePoint()
+    {
+        point++;
+        pointsCounter.UpdatePoint(point);
+    }
 
     private void Start()
     {

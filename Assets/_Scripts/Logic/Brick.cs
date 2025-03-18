@@ -7,6 +7,7 @@ public class Brick : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        GameManager.Instance.IncreasePoint();
         if (destroyRoutine != null) return;
         if (!other.gameObject.CompareTag("Ball")) return;
         destroyRoutine = StartCoroutine(DestroyWithDelay());
