@@ -32,7 +32,25 @@ public class Audiomanager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        PlayBackground();
+    }
+
+    public void PlayBackground()
+    {
+        if (Background != null && Ambience != null)
+        {
+            Ambience.clip = Background;
+            Ambience.loop = true;
+            Ambience.Play();
+        }
+    }
+
+    public void playSound(AudioClip clip)
+    {
+        if(clip != null)
+        {
+            SFX.PlayOneShot(clip);
+        }
     }
 
 
