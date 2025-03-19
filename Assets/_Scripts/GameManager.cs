@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.SceneManagement;
+using System.Drawing;
 
 public class GameManager : SingletonMonoBehavior<GameManager>
 {
@@ -23,7 +25,6 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     private void Start()
     {
         gameOverPanel.SetActive(false);
-
         currentLives = PlayerPrefs.GetInt("Lives", maxLives);  // Default to maxLives if not set
         point = PlayerPrefs.GetInt("Points", 0);
         lifecounter.UpdateLife(currentLives);
@@ -103,9 +104,16 @@ public class GameManager : SingletonMonoBehavior<GameManager>
 
     public void ResetGame()
     {
-        // Reset the lives and points, or you can reset specific values
+        // Reset the lives and points
         PlayerPrefs.DeleteKey("Lives");
         PlayerPrefs.DeleteKey("Points");
         PlayerPrefs.Save();  // Ensure data is written to disk
+
+        currentLives = maxLives;  // Reset current lives to max
+        point = 0;  // Reset points to zero
+
+        lifecounter.UpdateLife(maxLives);  // Update the life counter display
+        pointsCounter.UpdatePoint(point);  // Update the point counter display
     }
+
 }
