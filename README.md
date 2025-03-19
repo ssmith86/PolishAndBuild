@@ -5,10 +5,10 @@ Our teams take on the classic retro game Breakout
 https://youtu.be/bE1BvFlmciI
 
 ## Features
-- score UI
-- lives counter UI
-- Game Over transition UI
-- Audio and SFX
+- score UI by Darvesh
+- lives counter UI by Sam
+- Game Over transition UI by Sam
+- Audio and SFX by Cameron
 
 ## Play the game on itch.io
 https://sombresole.itch.io/breakout3d
