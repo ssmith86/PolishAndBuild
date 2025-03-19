@@ -4,6 +4,7 @@ using UnityEngine;
 public class Brick : MonoBehaviour
 {
     private Coroutine destroyRoutine = null;
+    public Audiomanager Audiomanager;
 
     private void OnCollisionEnter(Collision other)
     {
@@ -17,6 +18,10 @@ public class Brick : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f); // two physics frames to ensure proper collision
         GameManager.Instance.OnBrickDestroyed(transform.position);
+        if (Audiomanager != null)
+        {
+            Audiomanager.PlayBreak();
+        }
         Destroy(gameObject);
     }
 }
