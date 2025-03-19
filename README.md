@@ -1,14 +1,17 @@
 # Polish and Build
 Our teams take on the classic retro game Breakout
 
-## Demo
-
+## Demo video
+https://youtu.be/bE1BvFlmciI
 
 ## Features
 - score UI
 - lives counter UI
 - Game Over transition UI
 - Audio and SFX
+
+## Play the game on itch.io
+https://sombresole.itch.io/breakout3d
   
 ## Credits
 
