@@ -9,7 +9,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     [SerializeField] private int maxLives = 3;
     [SerializeField] private Ball ball;
     [SerializeField] private Transform bricksContainer;
-    [SerializeField] private TextMeshProUGUI lifeText;
+    [SerializeField] private LifeCounter lifecounter;
     [SerializeField] private int point = 0;
     [SerializeField] private PointCounter pointsCounter;
 
@@ -23,6 +23,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     private void Start()
     {
         gameOverPanel.SetActive(false);
+
         currentLives = PlayerPrefs.GetInt("Lives", maxLives);  // Default to maxLives if not set
         point = PlayerPrefs.GetInt("Points", 0);
         lifeText.text = $"Lives: {currentLives}";
@@ -34,6 +35,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         pointsCounter.UpdatePoint(point);
         Debug.Log("Score: " + point);
         SaveGame();
+
     }
 
     private void OnEnable()
@@ -64,9 +66,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
 
     public void OnBrickDestroyed(Vector3 position)
     {
-        // fire audio here
-        // implement particle effect here
-        // add camera shake here
+        
         currentBrickCount--;
         Debug.Log($"Destroyed Brick at {position}, {currentBrickCount}/{totalBrickCount} remaining");
         if(currentBrickCount == 0) SceneHandler.Instance.LoadNextScene();
@@ -75,7 +75,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     public void KillBall()
     {
         currentLives--;
-        lifeText.text = $"Lives: {currentLives}";
+        lifecounter.UpdateLife(currentLives);  
         Debug.Log("Life lost! Remaining lives: " + currentLives);
 
         SaveGame();
@@ -87,14 +87,11 @@ public class GameManager : SingletonMonoBehavior<GameManager>
             gameOverPanel.SetActive(true);
             Time.timeScale = 0;
             StartCoroutine(EndGame());
-        
         }
         else
         {
             ball.ResetBall();
         }
-       
-       
     }
 
     IEnumerator EndGame()
