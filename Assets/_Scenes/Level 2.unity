@@ -891,6 +891,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d6fde1542a8b88469832402a67b3a86, type: 3}
+--- !u!114 &524950140 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2197809075827553116, guid: 8d6fde1542a8b88469832402a67b3a86, type: 3}
+  m_PrefabInstance: {fileID: 524950139}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a33a36ac1ad3cb4dbd2866a6e2a85ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &561106333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2543,7 +2554,7 @@ MonoBehaviour:
   bricksContainer: {fileID: 796630123}
   lifeText: {fileID: 32841410}
   point: 0
-  pointsCounter: {fileID: 0}
+  pointsCounter: {fileID: 524950140}
   gameOverPanel: {fileID: 1565928604}
 --- !u!1001 &1708692028
 PrefabInstance:
