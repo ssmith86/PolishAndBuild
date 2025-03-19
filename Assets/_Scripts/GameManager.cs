@@ -9,7 +9,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     [SerializeField] private int maxLives = 3;
     [SerializeField] private Ball ball;
     [SerializeField] private Transform bricksContainer;
-    [SerializeField] private TextMeshProUGUI lifeText;
+    [SerializeField] private LifeCounter lifecounter;
     [SerializeField] private int point = 0;
     [SerializeField] private PointCounter pointsCounter;
 
@@ -29,7 +29,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     {
         gameOverPanel.SetActive(false);
         currentLives = maxLives;
-        lifeText.text = $"Lives: {currentLives}";
+       
     }
 
     private void OnEnable()
@@ -52,9 +52,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
 
     public void OnBrickDestroyed(Vector3 position)
     {
-        // fire audio here
-        // implement particle effect here
-        // add camera shake here
+        
         currentBrickCount--;
         Debug.Log($"Destroyed Brick at {position}, {currentBrickCount}/{totalBrickCount} remaining");
         if(currentBrickCount == 0) SceneHandler.Instance.LoadNextScene();
@@ -63,7 +61,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     public void KillBall()
     {
         currentLives--;
-        lifeText.text = $"Lives: {currentLives}";
+        lifecounter.UpdateLife(currentLives);  
         Debug.Log("Life lost! Remaining lives: " + currentLives);
         if (currentLives <= 0)
         {
@@ -72,14 +70,11 @@ public class GameManager : SingletonMonoBehavior<GameManager>
             gameOverPanel.SetActive(true);
             Time.timeScale = 0;
             StartCoroutine(EndGame());
-        
         }
         else
         {
             ball.ResetBall();
         }
-       
-       
     }
 
     IEnumerator EndGame()
