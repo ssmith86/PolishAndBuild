@@ -762,6 +762,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2826755545029572370, guid: 8d6fde1542a8b88469832402a67b3a86, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2826755545029572370, guid: 8d6fde1542a8b88469832402a67b3a86, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2826755545029572370, guid: 8d6fde1542a8b88469832402a67b3a86, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6269898958298191700, guid: 8d6fde1542a8b88469832402a67b3a86, type: 3}
       propertyPath: m_Name
       value: PointCanvas
@@ -2547,6 +2559,14 @@ PrefabInstance:
     - target: {fileID: 6325456869130302874, guid: cd1afbfb83bedab44bf617935df77f36, type: 3}
       propertyPath: m_Name
       value: LivesCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290124456761183694, guid: cd1afbfb83bedab44bf617935df77f36, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290124456761183694, guid: cd1afbfb83bedab44bf617935df77f36, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8917973752895333032, guid: cd1afbfb83bedab44bf617935df77f36, type: 3}
       propertyPath: m_Pivot.x
