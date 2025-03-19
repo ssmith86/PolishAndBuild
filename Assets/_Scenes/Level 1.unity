@@ -2908,6 +2908,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOverCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5508365973886383816, guid: 7f5c1006e78269c4f84ebb1a2f9f082d, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508365973886383816, guid: 7f5c1006e78269c4f84ebb1a2f9f082d, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508365973886383816, guid: 7f5c1006e78269c4f84ebb1a2f9f082d, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 540
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3042,6 +3054,18 @@ PrefabInstance:
       propertyPath: m_fontSizeMax
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 3571067963163764156, guid: 8d6fde1542a8b88469832402a67b3a86, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571067963163764156, guid: 8d6fde1542a8b88469832402a67b3a86, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571067963163764156, guid: 8d6fde1542a8b88469832402a67b3a86, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 540
+      objectReference: {fileID: 0}
     - target: {fileID: 6269898958298191700, guid: 8d6fde1542a8b88469832402a67b3a86, type: 3}
       propertyPath: m_Name
       value: PointCanvas
@@ -3083,6 +3107,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3506232560600094576, guid: cd1afbfb83bedab44bf617935df77f36, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3506232560600094576, guid: cd1afbfb83bedab44bf617935df77f36, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 3506232560600094576, guid: cd1afbfb83bedab44bf617935df77f36, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 540
+      objectReference: {fileID: 0}
     - target: {fileID: 4684298699993875980, guid: cd1afbfb83bedab44bf617935df77f36, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
