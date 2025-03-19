@@ -50,6 +50,7 @@ public class SceneHandler : SingletonMonoBehavior<SceneHandler>
         transitionCanvas.DOLocalMoveX(initXPosition + transitionCanvas.rect.width, animationDuration).SetEase(animationType);
         StartCoroutine(LoadSceneAfterTransition(menuScene));
         nextLevelIndex = 0;
+        GameManager.Instance.ResetGame();  
     }
 
     private IEnumerator LoadSceneAfterTransition(string scene)
