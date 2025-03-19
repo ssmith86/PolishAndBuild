@@ -26,7 +26,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
 
         currentLives = PlayerPrefs.GetInt("Lives", maxLives);  // Default to maxLives if not set
         point = PlayerPrefs.GetInt("Points", 0);
-        lifeText.text = $"Lives: {currentLives}";
+        lifecounter.UpdateLife(currentLives);
         pointsCounter.UpdatePoint(point);
     }
     public void IncreasePoint()
