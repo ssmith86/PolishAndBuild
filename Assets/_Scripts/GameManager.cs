@@ -19,17 +19,23 @@ public class GameManager : SingletonMonoBehavior<GameManager>
 
     public GameObject gameOverPanel;
 
-    public void IncreasePoint()
-    {
-        point++;
-        pointsCounter.UpdatePoint(point);
-    }
 
     private void Start()
     {
         gameOverPanel.SetActive(false);
-        currentLives = maxLives;
-       
+
+        currentLives = PlayerPrefs.GetInt("Lives", maxLives);  // Default to maxLives if not set
+        point = PlayerPrefs.GetInt("Points", 0);
+        lifecounter.UpdateLife(currentLives);
+        pointsCounter.UpdatePoint(point);
+    }
+    public void IncreasePoint()
+    {
+        point++;
+        pointsCounter.UpdatePoint(point);
+        Debug.Log("Score: " + point);
+        SaveGame();
+
     }
 
     private void OnEnable()
@@ -50,6 +56,14 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         ball.FireBall();
     }
 
+    public void SaveGame()
+    {
+        // Save the current lives and points to PlayerPrefs
+        PlayerPrefs.SetInt("Lives", currentLives);
+        PlayerPrefs.SetInt("Points", point);
+        PlayerPrefs.Save();
+    }
+
     public void OnBrickDestroyed(Vector3 position)
     {
         
@@ -63,6 +77,9 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         currentLives--;
         lifecounter.UpdateLife(currentLives);  
         Debug.Log("Life lost! Remaining lives: " + currentLives);
+
+        SaveGame();
+
         if (currentLives <= 0)
         {
             // trigger gameover logic
@@ -82,5 +99,13 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         yield return new WaitForSecondsRealtime(1.5f); // Wait for 1.5 seconds, using real time
         Time.timeScale = 1; // Reset the time scale to normal before transitioning
         SceneHandler.Instance.LoadMenuScene(); // Load the main menu scene
+    }
+
+    public void ResetGame()
+    {
+        // Reset the lives and points, or you can reset specific values
+        PlayerPrefs.DeleteKey("Lives");
+        PlayerPrefs.DeleteKey("Points");
+        PlayerPrefs.Save();  // Ensure data is written to disk
     }
 }
